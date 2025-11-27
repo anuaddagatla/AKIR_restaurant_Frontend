@@ -61,9 +61,7 @@ Feel free to fork the repo and submit a pull request.
 
 ## 📩 Contact
 
-**Author**: Porumamilla Akash  
-📧 **Email**: [pakashgoud355@gmail.com](mailto:pakashgoud355@gmail.com)  
-💻 **GitHub**: [akie335](https://github.com/akash335/AKIR_Restaurant)  
-🔗 **LinkedIn**: [Porumamilla Akash](https://www.linkedin.com/in/porumamilla-akash-06b3122aa/)  
+**Author**: Addagatla Anusha Sri Lakshmi  
+📧 **Email**: [anu.addagatla18@gmail.com](mailto:anu.addagatla18@gmail.com) 
 
 ---# Web_Restaurant_frontend
