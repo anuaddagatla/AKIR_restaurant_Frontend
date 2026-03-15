@@ -61,7 +61,7 @@ Feel free to fork the repo and submit a pull request.
 
 ## 📩 Contact
 
-**Author**: Porumamilla Akash  
-📧 **Email**: [pakashgoud355@gmail.com](mailto:anu.addagatla18@gmail.com)
+**Author**: A Anusha 
+📧 **Email**: [anu.addagatla18@gmail.com](mailto:anu.addagatla18@gmail.com)
   
 ---# Web_Restaurant_frontend
