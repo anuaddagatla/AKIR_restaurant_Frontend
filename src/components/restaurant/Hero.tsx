@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { lazy, Suspense, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -13,6 +14,19 @@ const Scene3D = lazy<React.ComponentType<{ className?: string }>>(() =>
       ((_: { className?: string }) => null)) as React.ComponentType<{
         className?: string;
       }>,
+=======
+import React, { lazy, Suspense } from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
+// Strongly-typed, safe lazy import (no runtime errors if 3D module is missing)
+const Scene3D = lazy<React.ComponentType<{ className?: string }>>(() =>
+  import("../3d/Scene3D").then((mod: any) => ({
+    // if there’s no default export, try named; else return a no-op component
+    default: (mod.default ?? mod.Scene3D ?? ((_: { className?: string }) => null)) as React.ComponentType<{
+      className?: string;
+    }>,
+>>>>>>> 7e3f1f14093c4c27fbc23a6f6f6349a0f94048f6
   }))
 );
 
@@ -20,6 +34,7 @@ const btn =
   "inline-flex h-12 w-[220px] items-center justify-center rounded-2xl text-base font-semibold";
 
 export function Hero() {
+<<<<<<< HEAD
   const [mounted, setMounted] = useState(false);
   const [canUseWebGL, setCanUseWebGL] = useState(false);
 
@@ -35,11 +50,19 @@ export function Hero() {
   }, []);
 
   return (
+=======
+  return (
+    // Full viewport minus sticky navbar height (64px)
+>>>>>>> 7e3f1f14093c4c27fbc23a6f6f6349a0f94048f6
     <section
       id="home"
       className="relative min-h-[calc(100vh-64px)] md:min-h-[calc(100vh-64px)] flex items-center overflow-hidden bg-[#0c0f14]"
     >
+<<<<<<< HEAD
       {/* Background image with Ken Burns */}
+=======
+      {/* Background image with Ken Burns (smooth zoom-out) */}
+>>>>>>> 7e3f1f14093c4c27fbc23a6f6f6349a0f94048f6
       <img
         src="/hero-restaurant.jpg"
         alt=""
@@ -47,6 +70,7 @@ export function Hero() {
         onError={(e) => (e.currentTarget.style.display = "none")}
       />
 
+<<<<<<< HEAD
       {/* Dim overlay */}
       <div className="absolute inset-0 z-0 bg-black/60 backdrop-blur-[2px]" />
 
@@ -61,6 +85,16 @@ export function Hero() {
         ) : (
           <HeroFallback className="w-full h-full" />
         )}
+=======
+      {/* Dim overlay for contrast */}
+      <div className="absolute inset-0 z-0 bg-black/60 backdrop-blur-[2px]" />
+
+      {/* Optional 3D bubbles layer – pointer-events none so it never blocks clicks */}
+      <div className="absolute inset-0 z-10 opacity-30 pointer-events-none">
+        <Suspense fallback={null}>
+          <Scene3D className="w-full h-full" />
+        </Suspense>
+>>>>>>> 7e3f1f14093c4c27fbc23a6f6f6349a0f94048f6
       </div>
 
       {/* Soft gold glows */}
@@ -120,6 +154,10 @@ export function Hero() {
             </motion.div>
           </motion.div>
 
+<<<<<<< HEAD
+=======
+          {/* Stats */}
+>>>>>>> 7e3f1f14093c4c27fbc23a6f6f6349a0f94048f6
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -149,7 +187,11 @@ export function Hero() {
         </div>
       </div>
 
+<<<<<<< HEAD
       {/* Bottom wordmark */}
+=======
+      {/* Bottom wordmark (prevents header “AKIR” clipping issue and looks premium) */}
+>>>>>>> 7e3f1f14093c4c27fbc23a6f6f6349a0f94048f6
       <div
         className="pointer-events-none absolute bottom-14 left-1/2 -translate-x-1/2 z-20 select-none"
         aria-hidden
@@ -183,4 +225,8 @@ export function Hero() {
       </motion.div>
     </section>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7e3f1f14093c4c27fbc23a6f6f6349a0f94048f6

@@ -1,7 +1,22 @@
 node_modules/
 dist/
+<<<<<<< HEAD
 build/
 .vite/
 .env
 .DS_Store
 *.log
+=======
+.vite/
+.env*
+.DS_Store
+node_modules/
+node_modules 2/
+dist/
+build/
+.vite/
+.DS_Store
+.env
+.env.local
+*.log
+>>>>>>> 7e3f1f14093c4c27fbc23a6f6f6349a0f94048f6

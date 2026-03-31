@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { toast } from 'sonner'
+<<<<<<< HEAD
 
 const API_BASE =
   import.meta.env.VITE_API_URL?.replace(/\/$/, '') || 'http://localhost:4000';
@@ -35,6 +36,9 @@ async function submitContact(data: {
 
   return json;
 }
+=======
+import { submitContact } from '@/lib/email-config'
+>>>>>>> 7e3f1f14093c4c27fbc23a6f6f6349a0f94048f6
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -49,6 +53,7 @@ export function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+<<<<<<< HEAD
 
     try {
       const result = await submitContact(formData)
@@ -56,6 +61,15 @@ export function Contact() {
       if (result.success) {
         toast.success('Message sent successfully! We will get back to you soon.')
 
+=======
+    
+    try {
+      const result = await submitContact(formData)
+      
+      if (result.success) {
+        toast.success('Message sent successfully! We will get back to you soon.')
+        
+>>>>>>> 7e3f1f14093c4c27fbc23a6f6f6349a0f94048f6
         // Reset form
         setFormData({
           name: '',
@@ -165,7 +179,11 @@ export function Contact() {
               <h3 className="text-2xl font-display font-bold text-foreground mb-6">
                 Send us a Message
               </h3>
+<<<<<<< HEAD
 
+=======
+              
+>>>>>>> 7e3f1f14093c4c27fbc23a6f6f6349a0f94048f6
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
@@ -178,7 +196,11 @@ export function Contact() {
                       className="bg-background/50 border-border focus:border-gold transition-colors"
                     />
                   </div>
+<<<<<<< HEAD
 
+=======
+                  
+>>>>>>> 7e3f1f14093c4c27fbc23a6f6f6349a0f94048f6
                   <div className="space-y-2">
                     <Label htmlFor="email" className="text-foreground font-elegant">Email</Label>
                     <Input
@@ -215,10 +237,17 @@ export function Contact() {
                   />
                 </div>
 
+<<<<<<< HEAD
                 <Button
                   type="submit"
                   variant="gold"
                   size="lg"
+=======
+                <Button 
+                  type="submit" 
+                  variant="gold" 
+                  size="lg" 
+>>>>>>> 7e3f1f14093c4c27fbc23a6f6f6349a0f94048f6
                   className="w-full"
                   disabled={isSubmitting}
                 >

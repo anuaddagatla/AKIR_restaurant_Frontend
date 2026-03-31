@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useMemo, useState } from "react";
 import { postJSON } from "@/lib/api";
 
@@ -19,10 +20,18 @@ export function ReservationForm() {
     const dd = String(d.getDate()).padStart(2, "0");
     return `${yyyy}-${mm}-${dd}`;
   }, []);
+=======
+// src/components/restaurant/ReservationForm.tsx
+import { useState } from "react";
+
+export function ReservationForm() {
+  const [submitting, setSubmitting] = useState(false);
+>>>>>>> 7e3f1f14093c4c27fbc23a6f6f6349a0f94048f6
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setSubmitting(true);
+<<<<<<< HEAD
     setErrorMsg(null);
     setSuccessMsg(null);
 
@@ -48,6 +57,18 @@ export function ReservationForm() {
       form.reset();
     } catch (err: any) {
       setErrorMsg(err?.message || "Something went wrong.");
+=======
+    try {
+      const form = e.currentTarget;
+      const data = Object.fromEntries(new FormData(form).entries());
+      // TODO: call your backend here
+      console.log("reserve payload", data);
+      alert("Reservation sent!");
+      form.reset();
+    } catch (err) {
+      console.error(err);
+      alert("Something went wrong.");
+>>>>>>> 7e3f1f14093c4c27fbc23a6f6f6349a0f94048f6
     } finally {
       setSubmitting(false);
     }
@@ -63,6 +84,7 @@ export function ReservationForm() {
         Reserve a Table
       </h2>
 
+<<<<<<< HEAD
       {errorMsg && (
         <div className="mb-4 rounded-xl border border-red-400/30 bg-red-500/10 px-4 py-3 text-sm text-red-200">
           {errorMsg}
@@ -75,55 +97,162 @@ export function ReservationForm() {
       )}
 
       <form onSubmit={onSubmit} noValidate className="space-y-4" aria-label="Reservation form">
+=======
+      {/* noValidate avoids browser’s default tooltips; we still use required/patterns */}
+      <form onSubmit={onSubmit} noValidate className="space-y-4" aria-label="Reservation form">
+        {/* Full name */}
+>>>>>>> 7e3f1f14093c4c27fbc23a6f6f6349a0f94048f6
         <div>
           <label htmlFor="res-name" className="block text-sm text-white/80 mb-1">
             Full name
           </label>
+<<<<<<< HEAD
           <input id="res-name" name="name" type="text" autoComplete="name" required placeholder="e.g., Akash Kumar" className={inputBase} />
         </div>
 
+=======
+          <input
+            id="res-name"
+            name="name"
+            type="text"
+            autoComplete="name"
+            required
+            placeholder="e.g., Akash Kumar"
+            className={inputBase}
+          />
+        </div>
+
+        {/* Email */}
+>>>>>>> 7e3f1f14093c4c27fbc23a6f6f6349a0f94048f6
         <div>
           <label htmlFor="res-email" className="block text-sm text-white/80 mb-1">
             Email
           </label>
+<<<<<<< HEAD
           <input id="res-email" name="email" type="email" autoComplete="email" inputMode="email" required placeholder="you@example.com" className={inputBase} />
         </div>
 
+=======
+          <input
+            id="res-email"
+            name="email"
+            type="email"
+            autoComplete="email"
+            inputMode="email"
+            required
+            placeholder="you@example.com"
+            className={inputBase}
+          />
+        </div>
+
+        {/* Phone */}
+>>>>>>> 7e3f1f14093c4c27fbc23a6f6f6349a0f94048f6
         <div>
           <label htmlFor="res-phone" className="block text-sm text-white/80 mb-1">
             Phone
           </label>
+<<<<<<< HEAD
           <input id="res-phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" required placeholder="10-digit number" className={inputBase} />
         </div>
 
+=======
+          <input
+            id="res-phone"
+            name="phone"
+            type="tel"
+            inputMode="tel"
+            autoComplete="tel"
+            pattern="[0-9]{10}"
+            required
+            placeholder="10-digit number"
+            className={inputBase}
+          />
+        </div>
+
+        {/* Date & Time */}
+>>>>>>> 7e3f1f14093c4c27fbc23a6f6f6349a0f94048f6
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label htmlFor="res-date" className="block text-sm text-white/80 mb-1">
               Date
             </label>
+<<<<<<< HEAD
             <input id="res-date" name="date" type="date" min={minDate} autoComplete="off" required className={inputBase} />
+=======
+            <input
+              id="res-date"
+              name="date"
+              type="date"
+              autoComplete="off"      // no reliable token for reservations → turn off
+              required
+              className={inputBase}
+            />
+>>>>>>> 7e3f1f14093c4c27fbc23a6f6f6349a0f94048f6
           </div>
 
           <div>
             <label htmlFor="res-time" className="block text-sm text-white/80 mb-1">
               Time
             </label>
+<<<<<<< HEAD
             <input id="res-time" name="time" type="time" autoComplete="off" required className={inputBase} />
           </div>
         </div>
 
+=======
+            <input
+              id="res-time"
+              name="time"
+              type="time"
+              autoComplete="off"
+              required
+              className={inputBase}
+            />
+          </div>
+        </div>
+
+        {/* Guests */}
+>>>>>>> 7e3f1f14093c4c27fbc23a6f6f6349a0f94048f6
         <div>
           <label htmlFor="res-guests" className="block text-sm text-white/80 mb-1">
             Guests
           </label>
+<<<<<<< HEAD
           <input id="res-guests" name="guests" type="number" min={1} max={20} autoComplete="off" required placeholder="2" className={inputBase} />
         </div>
 
+=======
+          <input
+            id="res-guests"
+            name="guests"
+            type="number"
+            min={1}
+            max={20}
+            autoComplete="off"
+            required
+            placeholder="2"
+            className={inputBase}
+          />
+        </div>
+
+        {/* Notes */}
+>>>>>>> 7e3f1f14093c4c27fbc23a6f6f6349a0f94048f6
         <div>
           <label htmlFor="res-notes" className="block text-sm text-white/80 mb-1">
             Special requests (optional)
           </label>
+<<<<<<< HEAD
           <textarea id="res-notes" name="specialRequests" rows={4} autoComplete="off" placeholder="Allergies, occasion, seating preference…" className={inputBase} />
+=======
+          <textarea
+            id="res-notes"
+            name="notes"
+            rows={4}
+            autoComplete="off"
+            placeholder="Allergies, occasion, seating preference…"
+            className={inputBase}
+          />
+>>>>>>> 7e3f1f14093c4c27fbc23a6f6f6349a0f94048f6
         </div>
 
         <button
