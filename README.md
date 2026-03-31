@@ -1,115 +1,96 @@
-# AKIR Restaurant Frontend
+# 🍽️ AKIR Restaurant – Frontend
 
-## About the Project
+## 🚀 Overview
+This is the frontend of the **AKIR Restaurant Website**, built with modern web technologies to deliver a fast, responsive, and visually engaging experience.
 
-This is the frontend for the AKIR Restaurant website.
-It is built using React, TypeScript, Vite, Tailwind CSS, and shadcn/ui.
-
-The website includes a modern responsive design, menu pages, contact form, reservation form, and 3D hero effects.
+It includes menu browsing, reservation system, contact form, and interactive UI elements like a 3D hero section.
 
 ---
 
-## Features
+## ✨ Features
 
-* Built with **React + TypeScript**
-* Powered by **Vite**
-* Styled using **Tailwind CSS** and **shadcn/ui**
-* Responsive design
-* 3D hero section
-* Menu page with dish cards
-* Contact form
-* Reservation form
-* Easy deployment
+- ⚛️ Built with **React + TypeScript**
+- ⚡ Powered by **Vite** (fast builds & HMR)
+- 🎨 Styled using **Tailwind CSS** + **shadcn/ui**
+- 📱 Fully responsive design
+- 🎥 Smooth animations with **Framer Motion**
+- 🧊 3D Hero Section using **Three.js / React Three Fiber**
+- 🍔 Dynamic Menu Page
+- 📩 Contact Form (connected to backend)
+- 📅 Reservation System
 
 ---
 
-## Installation & Setup
+## 🛠️ Tech Stack
 
-Clone and run locally:
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- shadcn/ui
+- Framer Motion
+- Three.js / React Three Fiber
 
-```sh
-# Step 1: Clone the repo
-git clone https://github.com/akash335/AKIR_Restaurant.git
+---
 
-# Step 2: Go to the frontend folder
+## 📦 Installation & Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/anuaddagatla/AKIR_restaurant_Frontend.git
+
+# Navigate to frontend
 cd AKIR_Restaurant/Web_Restaurant_frontend-main
 
-# Step 3: Install dependencies
+# Install dependencies
 npm install
 
-# Step 4: Start the dev server
+# Start development server
 npm run dev
-```
 
-The frontend runs on:
+🌐 App will run at:
 
-```sh
 http://localhost:5175
-```
 
----
+⚙️ Environment Variables
 
-## Environment Variables
+Create a .env file in the root:
 
-Create a `.env` file if needed:
-
-```env
 VITE_API_URL=http://localhost:4000
-```
 
-This connects the frontend to the backend API.
+👉 This connects frontend to backend API.
 
----
-
-## Build for Production
-
-```sh
+🏗️ Build for Production
 npm run build
-```
 
-The production files will be generated in the `dist/` folder.
+Output will be in:
 
----
+dist/
+🚀 Deployment
 
-## Deployment
+Recommended platforms:
 
-You can deploy the frontend on platforms like:
+Vercel (best for React + Vite)
+Netlify
 
-* Vercel
-* Netlify
+After deployment, update your .env:
 
-Make sure the backend API is deployed separately and update:
-
-```env
 VITE_API_URL=https://your-backend-url.com
-```
 
----
+⚠️ Important Notes
+Backend must be running for:
+Reservation form
+Contact form
+If 3D is not supported on some devices, fallback UI is used
+Ensure correct API URL in production
+👨‍💻 Author
 
-## Tech Stack
+A Anusha Sri Lakshmi 
 
-* React
-* TypeScript
-* Vite
-* Tailwind CSS
-* shadcn/ui
-* Framer Motion
-* React Three Fiber / Three.js
+📧 Email: anu.addagatla18@gmail.com
 
----
-
-## Notes
-
-* Make sure backend is running before testing forms locally
-* Reservation and contact forms depend on the backend API
-* If 3D is not supported on some devices, fallback rendering should be used
-
----
-
-## Author
-
-**Porumamilla Akash**
-Email: [porumamillaakash@gmail.com](mailto:porumamillaakash@gmail.com)
-LinkedIn: https://www.linkedin.com/in/porumamilla-akash-06b3122aa/
-
----# Web_Restaurant_frontend
+📌 Future Improvements
+Admin dashboard for reservations
+Payment integration
+Real-time booking system
+Menu filtering & search
